@@ -1,0 +1,2 @@
+# Don't push data files as they are large
+*.csv
