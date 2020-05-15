@@ -228,12 +228,12 @@ def display_raw_data(df):
     """Displays 5 rows if the user would like to see the raw data. If the user answers 'yes,' then the script should print 5 rows of the data at a time, then ask the user if they would like to see 5 more rows of the data. The script should continue prompting and printing the next 5 rows at a time until the user chooses 'no,' they do not want any more raw data to be displayed.
     """
     raw_data = input("\nWould you like to see the raw data? Enter 'yes' or 'no'.\n")
-    if raw_data.lower() == 'yes':
+    if raw_data.lower() == 'yes' or raw_data.lower() == 'y':
         print(df.head(5))
         while True:
             start_row = 0
             more_data = input("\nWould you like to see 5 ADDITIONAL rows of raw data? Enter 'yes' or 'no'.\n")
-            if more_data.lower() == 'yes':
+            if more_data.lower() == 'yes' or more_data.lower() == 'y':
                 five_rows = df.iloc[start_row: start_row + 5]
                 print(five_rows)
                 start_row = start_row + 5
@@ -248,6 +248,15 @@ def display_raw_data(df):
             else:
                 break
 
+def restart(df):
+    """Restarts the script if the user answers 'yes'. If the user answers 'no,' then the script ends.
+    """
+    restart = input("\nWould you like to restart? Enter 'yes' or 'no'.\n")
+    if restart.lower() != 'yes' restart.lower() != 'y':
+        print('-'*40)
+        break
+    else:
+        print('-'*40)
 
 def main():
     while True:
@@ -259,14 +268,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         display_raw_data(df)
-
-        restart = input("\nWould you like to restart? Enter 'yes' or 'no'.\n")
-        if restart.lower() != 'yes':
-            print('-'*40)
-            break
-        else:
-            print('-'*40)
-
+        restart(df)
 
 if __name__ == "__main__":
 	main()
