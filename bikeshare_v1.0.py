@@ -248,6 +248,15 @@ def display_raw_data(df):
             else:
                 break
 
+def restart(df):
+    """Restarts the script if the user answers 'yes'. If the user answers 'no,' then the script ends.
+    """
+    restart = input("\nWould you like to restart? Enter 'yes' or 'no'.\n")
+    if restart.lower() != 'yes':
+        print('-'*40)
+        break
+    else:
+        print('-'*40)
 
 def main():
     while True:
@@ -259,14 +268,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         display_raw_data(df)
-
-        restart = input("\nWould you like to restart? Enter 'yes' or 'no'.\n")
-        if restart.lower() != 'yes':
-            print('-'*40)
-            break
-        else:
-            print('-'*40)
-
+        restart(df)
 
 if __name__ == "__main__":
 	main()
