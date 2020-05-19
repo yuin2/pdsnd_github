@@ -19,3 +19,4 @@ README.md
 ### Credits
 Writing commit messages: https://medium.com/@nawarpianist/git-commit-best-practices-dab8d722de99
 Create a .gitignore file: https://coursework.vschool.io/create-a-gitignore/
+Udacity Git Commit message style guide: https://udacity.github.io/git-styleguide/
